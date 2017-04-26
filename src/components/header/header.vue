@@ -13,7 +13,7 @@
         </div>
       </div>
       <div class="avatar_detail" @click="showDetail">
-        <span>不要戳<dot>哇！</dot></span>
+        <span>不要戳哇<dot>！</dot></span>
       </div>
     </div>
     <div class="background">
@@ -31,10 +31,23 @@
             </div>
             <ul v-if="introduction.avatar" class="avatar">
               <li class="avatar-item" v-for="(item, index) in introduction.avatar">
-                <img :src="introduction.avatar[index].src" width="118" height="118"/>
+                <img :src="introduction.avatar[index].src" width="118" height="118" @click="changeAvatar(index)"/>
+              </li>
+            </ul>
+            <div class="title">
+              <div class="line"></div>
+              <div class="text">关于我</div>
+              <div class="line"></div>
+            </div>
+            <ul v-if="introduction.about" class="about">
+              <li class="about-item" v-for="(item, index) in introduction.about">
+                <span class="type">{{introduction.about[index].type}}:</span><p class="content" v-if="!introduction.about[index].isSrc">{{introduction.about[index].content}}</p><a :href="introduction.about[index].content" class="content" v-if="introduction.about[index].isSrc">{{introduction.about[index].content}}</a>
               </li>
             </ul>
           </div>
+        </div>
+        <div class="detail-close" @click="hideDetail">
+          <i class="icon-close"></i>
         </div>
       </div>
     </transition>
@@ -57,10 +70,12 @@
     methods: {
       showDetail() {
         this.detailShow = true;
-        console.log(this.introduction.avatar[1]);
       },
       hideDetail() {
         this.detailShow = false;
+      },
+      changeAvatar(index) {
+        this.avatarSrc = this.introduction.avatar[index].src;
       }
     }
   };
@@ -114,11 +129,11 @@
           dot
             display inline-block
             height 1em
-            line-height 1
+            line-height 1em
             text-align left
+            font-size 10px
             vertical-align -.5em
             overflow hidden
-
     .background
       position absolute
       top 0
@@ -128,10 +143,86 @@
       z-index -1
       filter blur(10px)
 
+    .detail
+      position fixed
+      z-index 100
+      top 0
+      left 0
+      width 100%
+      height 100%
+      overflow auto
+      background rgba(7, 17, 27, 0.8)
+      backdrop-filter blur(10px)
+      &.fade-enter-active,&.fade-leave-active
+        transition all 0.5s
+      &.fade-enter,&.fade-leave-active
+        opacity 0
+        background rgba(7, 17, 27, 0)
+      .detail-wrapper
+        min-height 100%
+        width 100%
+        .detail-main
+          margin-top 64px
+          padding-bottom 64px
+        .name
+          line-height 16px
+          text-align center
+          font-size 16px
+          font-weight 700
+        .title
+          display flex
+          width 80%
+          margin 28px auto 24px auto
+          .line
+            flex 1
+            position relative
+            top -6px
+            border-bottom 1px solid rgba(255, 255, 255, 0.2)
+          .text
+            padding 0 12px
+            font-weight 700
+            font-size 14px
+        .avatar
+          display flex
+          align-content center
+          justify-content space-around
+          flex-wrap wrap
+          margin 0 auto
+          width 80%
+          .avatar-item
+            width 118px
+            height 130px
+            img
+              flex 1
+        .about
+          width 80%
+          margin 0 auto
+          .about-item
+            width 95%
+            margin 0 auto
+            height 30px
+            line-height 30px
+            .content
+              display inline-block
+              text-align left
+            .type
+              display inline-block
+              width 53px
+            a
+              color #fff
+              text-decoration underline
+      .detail-close
+        position relative
+        width 32px
+        height 32px
+        margin -64px auto 0 auto
+        clear both
+        font-size 32px
 
   dot::before {
     display: block
-    content: '啊！\A呀！\A啦！\A哇！'
+    content: '?\A#\A@\A!'
+    vertical-align top
     white-space: pre-wrap
     animation: dot 5s infinite step-start both
   }
