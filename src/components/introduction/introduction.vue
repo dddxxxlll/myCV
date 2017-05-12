@@ -25,6 +25,12 @@
         switch: 1
       };
     },
+    computed: {
+      divHeight: function() {
+        let h = (window.screen.availHeight - 158) + 'px';
+        return {'height': h};
+      }
+    },
     methods: {
       GetSlideDirection(startX, startY, endX, endY) {
         var dy = startY - endY;

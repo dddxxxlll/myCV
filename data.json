@@ -41,5 +41,128 @@
     ]
   },
   "experience": [],
-  "skills": []
+  "skills": [
+    {
+      "name": "JavaScript",
+      "skills": [
+        {
+          "name": "Vue",
+          "description": "我只能说这个东西就是从头到尾全手打无插件用vue编写的"
+        },
+        {
+          "name": "原生JS",
+          "description": "好吧楼上说谎了，用了一个小插件，实在懒得写了"
+        },
+        {
+          "name": "JQuery",
+          "description": "也就那样吧"
+        },
+        {
+          "name": "AngularJS",
+          "description": "看得懂算吗"
+        },
+        {
+          "name": "EChart",
+          "description": "哼，可视化可是本职工作"
+        }
+      ]
+    },
+    {
+      "name": "CSS",
+      "skills": [
+        {
+          "name": "CSS3",
+          "description": "还行吧"
+        },
+        {
+          "name": "Bootstrap",
+          "description": "实话实说忘了很多。。。"
+        },
+        {
+          "name": "Stylus",
+          "description": "能用算嘛，顺便这个东西就是用stylus的"
+        }
+      ]
+    },
+    {
+      "name": "HTML",
+      "skills": [
+        {
+          "name": "HTML5",
+          "description": "不是我吹，这个我还真忘了差不多了"
+        },
+        {
+          "name": "JSP",
+          "description": "本职工作。。。才怪，看的懂罢了"
+        }
+      ]
+    },
+    {
+      "name": "后端语言",
+      "skills": [
+        {
+          "name": "JAVA",
+          "description": "看得懂"
+        },
+        {
+          "name": "PHP",
+          "description": "看得懂，但现在也忘得差不多了"
+        },
+        {
+          "name": "Ruby",
+          "description": "看过。。。。"
+        }
+      ]
+    },
+    {
+      "name": "版本控制器",
+      "skills": [
+        {
+          "name": "Git",
+          "description": "Git都不会你是程序员？"
+        },
+        {
+          "name": "SVN",
+          "description": "不瞒你说，我现在竟然还在用svn。。。"
+        }
+      ]
+    },
+    {
+      "name": "奇怪的东西",
+      "skills": [
+        {
+          "name": "守望先锋",
+          "description": "钻石的小垃圾啦"
+        },
+        {
+          "name": "英雄联盟",
+          "description": "钻石的小垃圾啦"
+        },
+        {
+          "name": "MySQL",
+          "description": "会一些命令行算什么水平？"
+        },
+        {
+          "name": "Linux",
+          "description": "不会。。。。好吧，还是会一点命令行的"
+        },
+        {
+          "name": "帅气度",
+          "description": "笑，懂？"
+        },
+        {
+          "name": "DOTA",
+          "description": "老兵不死，只是渐凋零"
+        },
+        {
+          "name": "曼联球迷？",
+          "description": "伪"
+        },
+        {
+          "name": "举铁爱好者",
+          "description": "不瞒你说，我十六块腹肌"
+        }
+      ]
+    }
+  ]
 }

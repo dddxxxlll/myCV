@@ -1,12 +1,12 @@
 <template lang="html">
   <div>
     <transition name="slide">
-      <div v-show="this.switch === 1" :style="divHeight" class="introduction2" ref="section1" @touchstart="T_start($event,1)" @touchend="T_end">
+      <div v-show="this.switch === 1" :style="divHeight" class="introduction2" ref="section1" @touchstart="T_start($event,1)" @touchend="T_end($event)">
         经历
       </div>
     </transition>
     <transition name="slide">
-      <div v-show="this.switch === 2" class="introduction2 none" ref="section2" @touchstart="T_start($event,2)" @touchend="T_end">
+      <div v-show="this.switch === 2" :style="divHeight" class="introduction2 none" ref="section2" @touchstart="T_start($event,2)" @touchend="T_end($event)">
         经历2
       </div>
     </transition>
@@ -27,7 +27,7 @@
     },
     computed: {
       divHeight: function() {
-        let h = (document.body.clientHeight - 158) + 'px';
+        let h = (window.screen.availHeight - 158) + 'px';
         return {'height': h};
       }
     },
@@ -53,7 +53,7 @@
         return result;
       },
       T_start(ev, type) {
-        alert(document.body.clientWidth);
+        /* alert(document.html.clientHeight); */
         this.startX = ev.touches[0].pageX;
         this.startY = ev.touches[0].pageY;
         this.type = type;
@@ -66,11 +66,49 @@
           case 0:
             break;
           case 1:
+            if (this.type === 1) {
+              let dom = this.$refs.section2;
+              this.$refs.section1.style.opacity = 0;
+              dom.style.opacity = 1;
+              dom.style.top = window.screen.availHeight + 'px';
+              setTimeout(function() {
+                dom.style.top = 158 + 'px';
+              }, 500);
+              this.switch = 2;
+            } else {
+              let dom = this.$refs.section1;
+              this.$refs.section2.style.opacity = 0;
+              dom.style.opacity = 1;
+              dom.style.top = window.screen.availHeight + 'px';
+              setTimeout(function() {
+                dom.style.top = 158 + 'px';
+              }, 500);
+              this.switch = 1;
+            }
             break;
           case 2:
             /* 向下 */
+            if (this.type === 1) {
+              let dom = this.$refs.section2;
+              this.$refs.section1.style.opacity = 0;
+              dom.style.opacity = 1;
+              dom.style.top = -(window.screen.availHeight - 158) + 'px';
+              setTimeout(function() {
+                dom.style.top = 158 + 'px';
+              }, 500);
+              this.switch = 2;
+            } else {
+              let dom = this.$refs.section1;
+              this.$refs.section2.style.opacity = 0;
+              dom.style.opacity = 1;
+              dom.style.top = -(window.screen.availHeight - 158) + 'px';
+              setTimeout(function() {
+                dom.style.top = 158 + 'px';
+              }, 500);
+              this.switch = 1;
+            }
             break;
-          case 3:
+          /* case 3:
             if (this.type === 1) {
               let dom = this.$refs.section2;
               this.$refs.section1.style.opacity = 0;
@@ -111,7 +149,7 @@
               }, 500);
               this.switch = 1;
             }
-            break;
+            break; */
           default:
         }
       }
