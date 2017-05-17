@@ -3,6 +3,7 @@
     "name": "董昕亮",
     "description": "苟...全性命于乱世？",
     "avatar_title": "http://ww2.sinaimg.cn/mw690/e7ae9384jw8eqnl5l86naj20dc0dcwf5.jpg",
+    "minNumber": 4,
     "avatar": [
       {
         "src": "http://ww2.sinaimg.cn/mw690/e7ae9384jw8eqnl5l86naj20dc0dcwf5.jpg"
@@ -47,23 +48,23 @@
       "skills": [
         {
           "name": "Vue",
-          "description": "我只能说这个东西就是从头到尾全手打无插件用vue编写的"
+          "description": "description1"
         },
         {
           "name": "原生JS",
-          "description": "好吧楼上说谎了，用了一个小插件，实在懒得写了"
+          "description": "description2"
         },
         {
           "name": "JQuery",
-          "description": "也就那样吧"
+          "description": "description3"
         },
         {
           "name": "AngularJS",
-          "description": "看得懂算吗"
+          "description": "description4"
         },
         {
           "name": "EChart",
-          "description": "哼，可视化可是本职工作"
+          "description": "description5"
         }
       ]
     },
@@ -72,15 +73,15 @@
       "skills": [
         {
           "name": "CSS3",
-          "description": "还行吧"
+          "description": "春花秋月何时了？"
         },
         {
           "name": "Bootstrap",
-          "description": "实话实说忘了很多。。。"
+          "description": "往事知多少。"
         },
         {
           "name": "Stylus",
-          "description": "能用算嘛，顺便这个东西就是用stylus的"
+          "description": "小楼昨夜又东风，"
         }
       ]
     },
@@ -89,11 +90,11 @@
       "skills": [
         {
           "name": "HTML5",
-          "description": "不是我吹，这个我还真忘了差不多了"
+          "description": "故国不堪回首月明中。"
         },
         {
           "name": "JSP",
-          "description": "本职工作。。。才怪，看的懂罢了"
+          "description": "雕栏玉彻应犹在，"
         }
       ]
     },
@@ -102,15 +103,15 @@
       "skills": [
         {
           "name": "JAVA",
-          "description": "看得懂"
+          "description": "只是朱颜改。"
         },
         {
           "name": "PHP",
-          "description": "看得懂，但现在也忘得差不多了"
+          "description": "问君能有几多愁？"
         },
         {
           "name": "Ruby",
-          "description": "看过。。。。"
+          "description": "恰似一江春水向东流。"
         }
       ]
     },
@@ -119,11 +120,11 @@
       "skills": [
         {
           "name": "Git",
-          "description": "Git都不会你是程序员？"
+          "description": "description6"
         },
         {
           "name": "SVN",
-          "description": "不瞒你说，我现在竟然还在用svn。。。"
+          "description": "哇"
         }
       ]
     },
@@ -132,35 +133,35 @@
       "skills": [
         {
           "name": "守望先锋",
-          "description": "钻石的小垃圾啦"
+          "description": "怎么有这么多要写啊"
         },
         {
           "name": "英雄联盟",
-          "description": "钻石的小垃圾啦"
+          "description": "forever young"
         },
         {
           "name": "MySQL",
-          "description": "会一些命令行算什么水平？"
+          "description": "在data.json中改"
         },
         {
           "name": "Linux",
-          "description": "不会。。。。好吧，还是会一点命令行的"
+          "description": "only know you love her"
         },
         {
           "name": "帅气度",
-          "description": "笑，懂？"
+          "description": "when you let her go"
         },
         {
           "name": "DOTA",
-          "description": "老兵不死，只是渐凋零"
+          "description": "我住的城市从不下雪"
         },
         {
           "name": "曼联球迷？",
-          "description": "伪"
+          "description": "记忆却堆满冷的感觉"
         },
         {
           "name": "举铁爱好者",
-          "description": "不瞒你说，我十六块腹肌"
+          "description": "Why I can't move on?"
         }
       ]
     }

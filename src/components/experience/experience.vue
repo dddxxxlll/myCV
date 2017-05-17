@@ -1,12 +1,12 @@
 <template lang="html">
   <div>
     <transition name="slide">
-      <div v-show="this.switch === 1" :style="divHeight" class="introduction2" ref="section1" @touchstart="T_start($event,1)" @touchend="T_end($event)">
+      <div v-show="this.switch === 1" :style="divHeight" class="introduction2" ref="section1" @touchstart.stop.prevent="T_start($event,1)" @touchend.stop.prevent="T_end($event)">
         经历
       </div>
     </transition>
     <transition name="slide">
-      <div v-show="this.switch === 2" :style="divHeight" class="introduction2 none" ref="section2" @touchstart="T_start($event,2)" @touchend="T_end($event)">
+      <div v-show="this.switch === 2" :style="divHeight" class="introduction2 none" ref="section2" @touchstart.stop.prevent="T_start($event,2)" @touchend.stop.prevent="T_end($event)">
         经历2
       </div>
     </transition>

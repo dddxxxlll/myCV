@@ -17,23 +17,30 @@
             <li @click="selectSkill(skill,$event)" v-for="skill in item.skills" class="skill-item border-1px">
               <div class="content">
                 <h2 class="name">{{skill.name}}</h2>
+                <p class="desc">{{skill.description}}</p>
+                <div class="cartcontrol-wrapper">
+                  <cartcontrol @add="addSkill" :skill="skill"></cartcontrol>
+                </div>
               </div>
             </li>
           </ul>
         </li>
       </ul>
     </div>
+    <shopcart ref="shopcart" :select-skills="selectSkills" :min-number="introduction.minNumber"></shopcart>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
   import BScroll from 'better-scroll';
+  import shopcart from '../shopcart/shopcart.vue';
+  import cartcontrol from '../cartcontrol/cartcontrol.vue';
 
   const ERR_OK = 0;
 
   export default {
     props: {
-      seller: {
+      introduction: {
         type: Object
       }
     },
@@ -71,10 +78,8 @@
     created() {
       this.$http.get('/api/skills').then((response) => {
         response = response.body;
-        console.log(response);
         if (response.errno === ERR_OK) {
           this.skills = response.skills;
-          console.log(this.skills);
           this.$nextTick(() => {
             this._initScroll();
             this._calculateHeight();
@@ -119,7 +124,20 @@
         }
         this.selectedSkill = skill;
         // this.$refs.skill.show();
+      },
+      addSkill(target) {
+        this._drop(target);
+      },
+      _drop(target) {
+        // 体验优化，异步执行下落动画
+        this.$nextTick(() => {
+          this.$refs.shopcart.drop(target);
+        });
       }
+    },
+    components: {
+      shopcart,
+      cartcontrol
     }
   };
 </script>
@@ -185,4 +203,14 @@
             height 14px
             line-height 14px
             color rgb(7, 17, 27)
+          .desc
+            line-height 12px
+            font-size 10px
+            color rgb(147, 153, 159)
+            margin-bottom 8px
+
+          .cartcontrol-wrapper
+            position absolute
+            right 0
+            bottom 12px
 </style>
