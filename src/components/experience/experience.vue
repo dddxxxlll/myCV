@@ -2,7 +2,12 @@
   <div>
     <transition name="slide">
       <div v-show="this.switch === 1" :style="divHeight" class="introduction2" ref="section1" @touchstart.stop.prevent="T_start($event,1)" @touchend.stop.prevent="T_end($event)">
-        经历
+        <div class="span"><div class="title top"><span>项目名称</span></div><div class="empty"></div><shake :show="this.show" :content="experience.page[0].program"></shake></div>
+        <div class="span"><shake :show="this.show2" :content="experience.page[0].tool"></shake><div class="empty"></div><div class="title bottom"><span>使用工具</span></div></div>
+        <div class="span"><div class="title top"><span>持续时间</span></div><div class="empty"></div><shake :show="this.show3" :content="experience.page[0].time"></shake></div>
+        <div class="left">
+          <fadeIn :show="this.show4" :content="experience.page[0].description"></fadeIn>
+        </div>
       </div>
     </transition>
     <transition name="slide">
@@ -14,22 +19,40 @@
 </template>
 
 <script type="text/ecmascript-6">
+  import shake from '../shake/shake.vue';
+  import fadeIn from '../fade_in/fade_in.vue';
+
+  const ERR_OK = 0;
+
   export default {
     data() {
       return {
+        experience: [],
         startX: '',
         startY: '',
         endX: '',
         endY: '',
         type: '',
-        switch: 1
+        switch: 1,
+        show: true,
+        show2: true,
+        show3: true,
+        show4: true
       };
     },
     computed: {
       divHeight: function() {
-        let h = (window.screen.availHeight - 158) + 'px';
+        let h = (document.documentElement.clientHeight - 158) + 'px';
         return {'height': h};
       }
+    },
+    created() {
+      this.$http.get('/api/experience').then((response) => {
+        response = response.body;
+        if (response.errno === ERR_OK) {
+          this.experience = response.experience;
+        }
+      });
     },
     methods: {
       GetSlideDirection(startX, startY, endX, endY) {
@@ -75,6 +98,10 @@
                 dom.style.top = 158 + 'px';
               }, 500);
               this.switch = 2;
+              this.show = false;
+              this.show2 = false;
+              this.show3 = false;
+              this.show4 = false;
             } else {
               let dom = this.$refs.section1;
               this.$refs.section2.style.opacity = 0;
@@ -84,6 +111,17 @@
                 dom.style.top = 158 + 'px';
               }, 500);
               this.switch = 1;
+              let This = this;
+              This.show = true;
+              setTimeout(function () {
+                This.show2 = true;
+              }, 1500);
+              setTimeout(function () {
+                This.show3 = true;
+              }, 2500);
+              setTimeout(function () {
+                This.show4 = true;
+              }, 3500);
             }
             break;
           case 2:
@@ -97,6 +135,10 @@
                 dom.style.top = 158 + 'px';
               }, 500);
               this.switch = 2;
+              this.show = false;
+              this.show2 = false;
+              this.show3 = false;
+              this.show4 = false;
             } else {
               let dom = this.$refs.section1;
               this.$refs.section2.style.opacity = 0;
@@ -106,6 +148,17 @@
                 dom.style.top = 158 + 'px';
               }, 500);
               this.switch = 1;
+              let This = this;
+              This.show = true;
+              setTimeout(function () {
+                This.show2 = true;
+              }, 1500);
+              setTimeout(function () {
+                This.show3 = true;
+              }, 2500);
+              setTimeout(function () {
+                This.show4 = true;
+              }, 3500);
             }
             break;
           /* case 3:
@@ -153,6 +206,10 @@
           default:
         }
       }
+    },
+    components: {
+      shake,
+      fadeIn
     }
   };
 </script>
@@ -161,16 +218,49 @@
   .introduction2
     position absolute
     width 100%
-    background #000
     top 158px
     left 0px
     z-index -1
     transition all .5s linear
+    .left
+      float left
+      width 40%
+    .span
+      width 60px
+      display inline-block
+      height 100%
+      float right
+      position relative
+      font-size 0
+      .title
+        box-sizing border-box
+        border-top 5px solid #000
+        border-left 1px solid #000
+        height 30%
+        width 100%
+        display inline-block
+        font-size 18px
+        line-height 60px
+        text-align center
+        &.top
+          position absolute
+          top 0
+          left 0
+        &.bottom
+          position absolute
+          bottom 0
+          left 0
+        span
+          writing-mode vertical-rl
+          width 100%
+          height 100%
+      .empty
+        height 30%
+        width 100%
+        display inline-block
   /* &.slide-enter-active, &.slide-leave-active
     transition all .5s linear
   &.slide-enter, &.slide-leave-active
     left 0
     top 158px */
-  .none
-    background #ccc
 </style>

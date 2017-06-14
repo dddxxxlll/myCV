@@ -39,9 +39,50 @@
         "isSrc": true,
         "content": "https://dddxxxlll.github.io"
       }
+    ],
+    "page": [
+      {
+        "type": "name",
+        "content": "董昕亮"
+      },
+      {
+        "type": "school",
+        "content": "不知道该有什么条目，暂定这几条"
+      },
+      {
+        "type": "introduce",
+        "content": "介绍页面识别左右手势，经历页面识别上下手势。顺便不要快速划很多次，会有问题。不想解决，就这样了。"
+      },
+      {
+        "type": "certificate",
+        "content": "好想成为首富像蛆虫一样毫无意义的度过一生啊"
+      },
+      {
+        "type": "foreign_language",
+        "content": "不是我吹，我这ui设计的贼好看啊"
+      },
+      {
+        "type": "school_experience",
+        "content": "很多事情这世界上绝大部分人都无法做到，这并不是因为这件事有多难。而是因为这世界上绝大部分人都太弱了。凑字数凑字数凑字数。"
+      }
     ]
   },
-  "experience": [],
+  "experience": {
+    "page": [
+      {
+        "program": "项目一",
+        "tool": "使用工具",
+        "time": "持续时间",
+        "description": "项目描述：凑字数凑字数凑字数凑字数"
+      },
+      {
+        "program": "项目二",
+        "tool": "使用工具",
+        "time": "持续时间",
+        "description": "项目描述：凑字数凑字数凑字数凑字数"
+      }
+    ]
+  },
   "skills": [
     {
       "name": "JavaScript",
