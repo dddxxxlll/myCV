@@ -47,7 +47,7 @@
       },
       {
         "type": "school",
-        "content": "不知道该有什么条目，暂定这几条"
+        "content": "我这人除了长得帅真的一无是处啊"
       },
       {
         "type": "introduce",
@@ -59,7 +59,7 @@
       },
       {
         "type": "foreign_language",
-        "content": "不是我吹，我这ui设计的贼好看啊"
+        "content": "花开堪折直须折，莫待无花空折枝"
       },
       {
         "type": "school_experience",
@@ -71,15 +71,15 @@
     "page": [
       {
         "program": "项目一",
-        "tool": "使用工具",
-        "time": "持续时间",
-        "description": "项目描述：凑字数凑字数凑字数凑字数"
+        "tool": "神州五号飞船",
+        "time": "计划中",
+        "description": "项目描述：好想将某个玩CSGO喜欢喊麦的傻逼放逐到外太空啊！凑字数凑字数凑字数凑字数"
       },
       {
         "program": "项目二",
-        "tool": "使用工具",
-        "time": "持续时间",
-        "description": "项目描述：凑字数凑字数凑字数凑字数"
+        "tool": "p90",
+        "time": "一瞬",
+        "description": "项目描述：好想把天天喊我打游戏，让我找不到女朋友的人统统枪毙啊凑字数凑字数凑字数凑字数"
       }
     ]
   },
@@ -153,6 +153,10 @@
         {
           "name": "Ruby",
           "description": "恰似一江春水向东流。"
+        },
+        {
+          "name": "NODE",
+          "description": "旧铁皮往南开，人影已不在"
         }
       ]
     },
@@ -197,11 +201,11 @@
           "description": "我住的城市从不下雪"
         },
         {
-          "name": "曼联球迷？",
+          "name": "MongoDB",
           "description": "记忆却堆满冷的感觉"
         },
         {
-          "name": "举铁爱好者",
+          "name": "CSGO",
           "description": "Why I can't move on?"
         }
       ]

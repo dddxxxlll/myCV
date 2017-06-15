@@ -12,7 +12,12 @@
     </transition>
     <transition name="slide">
       <div v-show="this.switch === 2" :style="divHeight" class="introduction2 none" ref="section2" @touchstart.stop.prevent="T_start($event,2)" @touchend.stop.prevent="T_end($event)">
-        经历2
+        <div class="span" style="float:left;"><div class="title top"><span>项目名称</span></div><div class="empty"></div><shake :show="this.show5" :content="experience.page[1].program"></shake></div>
+        <div class="span" style="float:left;"><shake :show="this.show6" :content="experience.page[1].tool"></shake><div class="empty"></div><div class="title bottom"><span>使用工具</span></div></div>
+        <div class="span" style="float:left;"><div class="title top"><span>持续时间</span></div><div class="empty"></div><shake :show="this.show7" :content="experience.page[1].time"></shake></div>
+        <div class="right">
+          <fadeIn :show="this.show8" :content="experience.page[1].description"></fadeIn>
+        </div>
       </div>
     </transition>
   </div>
@@ -34,10 +39,14 @@
         endY: '',
         type: '',
         switch: 1,
-        show: true,
-        show2: true,
-        show3: true,
-        show4: true
+        show: false,
+        show2: false,
+        show3: false,
+        show4: false,
+        show5: false,
+        show6: false,
+        show7: false,
+        show8: false
       };
     },
     computed: {
@@ -51,6 +60,17 @@
         response = response.body;
         if (response.errno === ERR_OK) {
           this.experience = response.experience;
+          let This = this;
+          This.show = true;
+          setTimeout(function () {
+            This.show2 = true;
+          }, 1500);
+          setTimeout(function () {
+            This.show3 = true;
+          }, 2500);
+          setTimeout(function () {
+            This.show4 = true;
+          }, 3500);
         }
       });
     },
@@ -102,6 +122,17 @@
               this.show2 = false;
               this.show3 = false;
               this.show4 = false;
+              let This = this;
+              This.show5 = true;
+              setTimeout(function () {
+                This.show6 = true;
+              }, 1500);
+              setTimeout(function () {
+                This.show7 = true;
+              }, 2500);
+              setTimeout(function () {
+                This.show8 = true;
+              }, 3500);
             } else {
               let dom = this.$refs.section1;
               this.$refs.section2.style.opacity = 0;
@@ -111,6 +142,10 @@
                 dom.style.top = 158 + 'px';
               }, 500);
               this.switch = 1;
+              this.show5 = false;
+              this.show6 = false;
+              this.show7 = false;
+              this.show8 = false;
               let This = this;
               This.show = true;
               setTimeout(function () {
@@ -139,6 +174,17 @@
               this.show2 = false;
               this.show3 = false;
               this.show4 = false;
+              let This = this;
+              This.show5 = true;
+              setTimeout(function () {
+                This.show6 = true;
+              }, 1500);
+              setTimeout(function () {
+                This.show7 = true;
+              }, 2500);
+              setTimeout(function () {
+                This.show8 = true;
+              }, 3500);
             } else {
               let dom = this.$refs.section1;
               this.$refs.section2.style.opacity = 0;
@@ -148,6 +194,10 @@
                 dom.style.top = 158 + 'px';
               }, 500);
               this.switch = 1;
+              this.show5 = false;
+              this.show6 = false;
+              this.show7 = false;
+              this.show8 = false;
               let This = this;
               This.show = true;
               setTimeout(function () {
@@ -224,6 +274,9 @@
     transition all .5s linear
     .left
       float left
+      width 40%
+    .right
+      float right
       width 40%
     .span
       width 60px
