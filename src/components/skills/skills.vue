@@ -35,8 +35,9 @@
   import BScroll from 'better-scroll';
   import shopcart from '../shopcart/shopcart.vue';
   import cartcontrol from '../cartcontrol/cartcontrol.vue';
+  import data from '../../common/json/data.json';
 
-  const ERR_OK = 0;
+  // const ERR_OK = 0;
 
   export default {
     props: {
@@ -76,7 +77,7 @@
       }
     },
     created() {
-      this.$http.get('/api/skills').then((response) => {
+      /* this.$http.get('/api/skills').then((response) => {
         response = response.body;
         if (response.errno === ERR_OK) {
           this.skills = response.skills;
@@ -85,6 +86,11 @@
             this._calculateHeight();
           });
         }
+      }); */
+      this.skills = data.skills;
+      this.$nextTick(() => {
+        this._initScroll();
+        this._calculateHeight();
       });
     },
     methods: {

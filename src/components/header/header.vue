@@ -64,7 +64,7 @@
     data() {
       return {
         detailShow: false,
-        avatarSrc: 'http://ww2.sinaimg.cn/mw690/e7ae9384jw8eqnl5l86naj20dc0dcwf5.jpg'
+        avatarSrc: 'https://ooo.0o0.ooo/2017/06/21/594a2e20f138c.jpg'
       };
     },
     methods: {

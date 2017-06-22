@@ -20,8 +20,9 @@
 
 <script>
   import header from '../src/components/header/header.vue';
+  import data from './common/json/data.json';
 
-  const ERR_OK = 0;
+  // const ERR_OK = 0;
 
   export default {
     data() {
@@ -30,12 +31,13 @@
       };
     },
     created() {
-      this.$http.get('/api/introduction').then((response) => {
+      /* this.$http.get('/api/introduction').then((response) => {
         response = response.body;
         if (response.errno === ERR_OK) {
           this.introduction = response.introduction;
         }
-      });
+      }); */
+      this.introduction = data.introduction;
     },
     components: {
       'v-header': header

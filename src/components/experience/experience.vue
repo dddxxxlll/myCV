@@ -26,8 +26,9 @@
 <script type="text/ecmascript-6">
   import shake from '../shake/shake.vue';
   import fadeIn from '../fade_in/fade_in.vue';
+  import data from '../../common/json/data.json';
 
-  const ERR_OK = 0;
+  // const ERR_OK = 0;
 
   export default {
     data() {
@@ -56,7 +57,7 @@
       }
     },
     created() {
-      this.$http.get('/api/experience').then((response) => {
+      /* this.$http.get('/api/experience').then((response) => {
         response = response.body;
         if (response.errno === ERR_OK) {
           this.experience = response.experience;
@@ -72,7 +73,19 @@
             This.show4 = true;
           }, 3500);
         }
-      });
+      }); */
+      this.experience = data.experience;
+      let This = this;
+      This.show = true;
+      setTimeout(function () {
+        This.show2 = true;
+      }, 1500);
+      setTimeout(function () {
+        This.show3 = true;
+      }, 2500);
+      setTimeout(function () {
+        This.show4 = true;
+      }, 3500);
     },
     methods: {
       GetSlideDirection(startX, startY, endX, endY) {
