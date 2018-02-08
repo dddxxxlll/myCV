@@ -1,4 +1,4 @@
-{
+﻿{
   "introduction": {
     "name": "董昕亮",
     "description": "苟...全性命于乱世？",
@@ -51,7 +51,7 @@
       },
       {
         "type": "introduce",
-        "content": "毕业于2016年，乐观上进，吃苦耐劳，有素描功底。热爱编程，视其为未来十年所要为之奋斗的事业"
+        "content": "毕业于2016年，乐观上进，吃苦耐劳，有素描功底。"
       },
       {
         "type": "certificate",
@@ -71,13 +71,13 @@
     "page": [
       {
         "program": "云瞻、云凌、虹口云平台等",
-        "tool": "jquery、echart、bootstrap等",
+        "tool": "layui、echart、bootstrap等",
         "time": "2017.6至今",
-        "description": "私有云的前端实现，处理后台从VMware中拿出的数据，并将其可视化展示。本人主要负责项目各个模块的js编写。"
+        "description": "私有云的前端实现，处理后台从VMware中拿出的数据，并将其可视化展示。websocket实现实时通讯、layui框架、novnc、mock数据、babel转译es6语法等等。该已被虹口、金山、青浦、黄埔区政府以及安盛中国、达信财富、浦东医院等购买及使用。"
       },
       {
         "program": "这个简历",
-        "tool": "vue全家桶、webpack等",
+        "tool": "vue、webpack等",
         "time": "1个月",
         "description": "整个项目独立完成，功能包括，路由懒加载、webpack构建与配置、mock后台数据、打包部署在github上等"
       }
@@ -89,23 +89,27 @@
       "skills": [
         {
           "name": "Vue",
-          "description": "基本能熟练使用"
+          "description": "能熟练使用"
         },
         {
-          "name": "原生JS",
+          "name": "原生JS、闭包、this等基础知识",
           "description": "水平良好"
         },
         {
           "name": "JQuery",
-          "description": "最近用的比较少了"
+          "description": "能熟练使用"
         },
         {
-          "name": "AngularJS",
-          "description": "看过，不太熟"
+          "name": "reactjs",
+          "description": "能熟练使用"
         },
         {
           "name": "EChart",
-          "description": "基本api都了解了"
+          "description": "能熟练使用"
+        },
+        {
+          "name": "ES6",
+          "description": "基本了解"
         }
       ]
     },
@@ -118,11 +122,15 @@
         },
         {
           "name": "Bootstrap",
-          "description": "要用的时候会翻官网。。"
+          "description": "要用的时候会查官网。。"
         },
         {
           "name": "Stylus",
           "description": "这个简历就是用stylus写的"
+        },
+        {
+          "name": "layui",
+          "description": "能熟练使用"
         }
       ]
     },
@@ -136,6 +144,10 @@
         {
           "name": "JSP",
           "description": "工作用"
+        },
+        {
+          "name": "HTTP协议",
+          "description": "熟悉了解"
         }
       ]
     },
@@ -144,15 +156,7 @@
       "skills": [
         {
           "name": "JAVA",
-          "description": "看过，不太熟"
-        },
-        {
-          "name": "PHP",
-          "description": "现在差不多都忘了"
-        },
-        {
-          "name": "Ruby",
-          "description": "并不会。。。凑个数"
+          "description": "工作对接语言"
         },
         {
           "name": "NODE",
@@ -165,7 +169,7 @@
       "skills": [
         {
           "name": "Git",
-          "description": "经常使用"
+          "description": "github用"
         },
         {
           "name": "SVN",
@@ -185,10 +189,6 @@
           "description": "曾经的钻石。。。"
         },
         {
-          "name": "MySQL",
-          "description": "不太熟悉"
-        },
-        {
           "name": "Linux",
           "description": "用VMware建个服务器是可以的"
         },
@@ -205,8 +205,8 @@
           "description": "应该说是穆里尼奥的球迷"
         },
         {
-          "name": "CSGO",
-          "description": "白银菜鸡。。。"
+          "name": "吃鸡",
+          "description": "渣渣水平"
         }
       ]
     }
